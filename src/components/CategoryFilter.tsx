@@ -15,28 +15,39 @@ const CategoryFilter = ({ setCategory }: Props) => {
   }, [])
 
   return (
-    <div className="flex gap-4 mb-6 flex-wrap">
 
-      <button
-        onClick={() => setCategory("all")}
-        className="bg-gray-200 px-3 py-1 rounded"
-      >
-        All
-      </button>
+    <div className="bg-white shadow-md rounded-xl p-4 mb-8">
 
-      {categories.map((cat) => (
+      <h2 className="text-lg font-semibold mb-4 text-gray-700">
+        Filter by Category
+      </h2>
 
+      <div className="flex gap-3 flex-wrap">
+
+        
         <button
-          key={cat}
-          onClick={() => setCategory(cat)}
-          className="bg-gray-200 px-3 py-1 rounded"
+          onClick={() => setCategory("all")}
+          className="px-4 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition"
         >
-          {cat}
+          All
         </button>
 
-      ))}
+        {categories.map((cat) => (
+
+          <button
+            key={cat}
+            onClick={() => setCategory(cat)}
+            className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-blue-500 hover:text-white transition capitalize"
+          >
+            {cat}
+          </button>
+
+        ))}
+
+      </div>
 
     </div>
+
   )
 }
 
