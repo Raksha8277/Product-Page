@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 
 interface Product {
   id: number
@@ -23,43 +23,73 @@ const ProductDetail = () => {
 
   }, [id])
 
-  if (!product) return <h1 className="text-center mt-10">Loading...</h1>
+  if (!product) return <h1 className="text-center mt-20 text-xl">Loading...</h1>
 
   return (
-    <div className="p-4 md:p-10">
 
-      <div className="flex flex-col md:flex-row gap-10 items-center">
+    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 flex justify-center items-center p-6">
 
-        {/* Product Image */}
-        <img
-          src={product.image}
-          className="h-64 md:h-80 object-contain"
-        />
+      <div className="bg-white shadow-xl rounded-xl p-8 max-w-3xl w-full">
 
-        {/* Product Info */}
-        <div className="max-w-xl">
+        {/* Back Button */}
+        <Link
+          to="/"
+          className="inline-block mb-5 bg-blue-600 text-white px-4 py-2 rounded-2xl hover:bg-blue-700 transition"
+        >
+          Back to Products
+        </Link>
 
-          <h1 className="text-xl md:text-3xl font-bold">
-            {product.title}
-          </h1>
+        <div className="flex flex-col md:flex-row gap-8 items-center">
 
-          <p className="text-green-600 text-lg md:text-xl mt-3">
-            ${product.price}
-          </p>
+          {/* Product Image */}
+          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
 
-          <p className="mt-4 text-gray-700">
-            {product.description}
-          </p>
+            <img
+              src={product.image}
+              className="h-52 md:h-64 object-contain"
+            />
 
-          <p className="mt-3 text-gray-500">
-            Category: {product.category}
-          </p>
+          </div>
+
+          {/* Product Info */}
+          <div className="max-w-md">
+
+            <h1 className="text-xl md:text-2xl font-bold text-gray-800">
+              {product.title}
+            </h1>
+
+            <p className="text-green-600 text-xl font-semibold mt-3">
+              ${product.price}
+            </p>
+
+            <p className="mt-3 text-gray-600 text-sm leading-relaxed">
+              {product.description}
+            </p>
+
+            <p className="mt-3 text-sm text-gray-500">
+              Category: <span className="font-medium">{product.category}</span>
+            </p>
+
+            <div className="flex gap-3 mt-5">
+
+              <button className="bg-blue-600 text-white px-5 py-2 rounded-2xl hover:bg-blue-700 transition">
+                Add to Cart
+              </button>
+
+              <button className="bg-green-500 text-white px-5 py-2 rounded-2xl hover:bg-green-600 transition">
+                Buy Now
+              </button>
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
 
     </div>
+
   )
 }
 
