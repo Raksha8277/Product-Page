@@ -27,7 +27,7 @@ const ProductDetail = () => {
 
   return (
 
-    <div className="min-h-screen bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 flex justify-center items-center p-6">
+    <div className="min-h-screen bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 flex justify-center items-center p-6">
 
       <div className="bg-white shadow-xl rounded-xl p-8 max-w-3xl w-full">
 
