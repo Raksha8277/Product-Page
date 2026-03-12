@@ -23,33 +23,39 @@ const ProductDetail = () => {
 
   }, [id])
 
-  if (!product) return <h1>Loading...</h1>
+  if (!product) return <h1 className="text-center mt-10">Loading...</h1>
 
   return (
-    <div className="p-10 flex gap-10">
+    <div className="p-4 md:p-10">
 
-      <img
-        src={product.image}
-        className="h-80 object-contain"
-      />
+      <div className="flex flex-col md:flex-row gap-10 items-center">
 
-      <div>
+        {/* Product Image */}
+        <img
+          src={product.image}
+          className="h-64 md:h-80 object-contain"
+        />
 
-        <h1 className="text-3xl font-bold">
-          {product.title}
-        </h1>
+        {/* Product Info */}
+        <div className="max-w-xl">
 
-        <p className="text-green-600 text-xl mt-2">
-          ${product.price}
-        </p>
+          <h1 className="text-xl md:text-3xl font-bold">
+            {product.title}
+          </h1>
 
-        <p className="mt-5">
-          {product.description}
-        </p>
+          <p className="text-green-600 text-lg md:text-xl mt-3">
+            ${product.price}
+          </p>
 
-        <p className="mt-3 text-gray-500">
-          Category: {product.category}
-        </p>
+          <p className="mt-4 text-gray-700">
+            {product.description}
+          </p>
+
+          <p className="mt-3 text-gray-500">
+            Category: {product.category}
+          </p>
+
+        </div>
 
       </div>
 
