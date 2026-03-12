@@ -4,7 +4,7 @@ const SearchBar = ({ setSearch }: any) => {
     <input
       type="text"
       placeholder="Search products..."
-      className="border p-2 w-full mb-6"
+      className="border text-gray-700 p-2 w-full bg-gray-00 rounded-2xl mb-6 hover:bg-blue-300 transition"
       onChange={(e) => setSearch(e.target.value)}
     />
   )
