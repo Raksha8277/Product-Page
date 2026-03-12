@@ -30,24 +30,25 @@ const Home = () => {
 
   }, [category])
 
-  return (
-    <div className="p-8">
+  const filteredProducts = products.filter(product =>
+    product.title.toLowerCase().includes(search.toLowerCase())
+  )
 
-      <h1 className="text-3xl font-bold mb-6">
+  return (
+    <div className="p-4 md:p-8">
+
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 text-center">
         Products
       </h1>
 
-      <div className="p-8">
-
       <SearchBar setSearch={setSearch} />
-
-    </div>
 
       <CategoryFilter setCategory={setCategory} />
 
-      <div className="grid grid-cols-4 gap-6">
+      {/* Responsive Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
 
-        {products.map(product => (
+        {filteredProducts.map(product => (
 
           <div
             key={product.id}
@@ -59,17 +60,17 @@ const Home = () => {
               className="h-40 mx-auto object-contain"
             />
 
-            <h2 className="text-sm mt-3">
+            <h2 className="text-sm mt-3 line-clamp-2">
               {product.title}
             </h2>
 
-            <p className="text-green-600 font-bold">
+            <p className="text-green-600 font-bold mt-2">
               ${product.price}
             </p>
 
             <Link
               to={`/product/${product.id}`}
-              className="text-blue-500 text-sm"
+              className="text-blue-500 text-sm mt-2 block"
             >
               View Details →
             </Link>
