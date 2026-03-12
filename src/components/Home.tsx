@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import SearchBar from "./SearchBar"
 import CategoryFilter from "./CategoryFilter"
 
 interface Product {
@@ -13,6 +14,7 @@ const Home = () => {
 
   const [products, setProducts] = useState<Product[]>([])
   const [category, setCategory] = useState("all")
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
 
@@ -34,6 +36,12 @@ const Home = () => {
       <h1 className="text-3xl font-bold mb-6">
         Products
       </h1>
+
+      <div className="p-8">
+
+      <SearchBar setSearch={setSearch} />
+
+    </div>
 
       <CategoryFilter setCategory={setCategory} />
 
