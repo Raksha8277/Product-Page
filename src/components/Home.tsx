@@ -57,7 +57,7 @@ const Home = () => {
 
       {loading && (
         <p className="text-center text-lg text-gray-600 mt-10">
-          Loading products...
+          Loading products....
         </p>
       )}
 
