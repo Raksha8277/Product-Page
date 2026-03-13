@@ -48,7 +48,7 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-r from-blue-50 via-blue-200 to-blue-50 p-6 md:p-10">
 
       <h1 className="text-4xl font-bold mb-10 text-center text-purple-800">
-        Explore Our Products
+        Explore Our Products 🛍️
       </h1>
 
       <SearchBar setSearch={setSearch} />
