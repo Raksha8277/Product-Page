@@ -32,7 +32,7 @@ const ProductDetail = () => {
 
   const { id } = useParams()
   const [product, setProduct] = useState<Product | null>(null)
-  const [qty, setQty] = useState(1)
+  // const [qty, setQty] = useState(1)
 
   useEffect(() => {
 
