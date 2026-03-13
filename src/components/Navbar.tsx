@@ -1,19 +1,19 @@
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 
-const Navbar = () => {
-  return (
-    <div className="bg-black text-white p-4 flex justify-between">
+// const Navbar = () => {
+//   return (
+//     <div className="bg-black text-white p-4 flex justify-between">
 
-      <Link to="/">
-        <h1 className="text-xl font-bold">
-          FakeStore
-        </h1>
-      </Link>
+//       <Link to="/">
+//         <h1 className="text-xl font-bold">
+//           FakeStore
+//         </h1>
+//       </Link>
 
-      <p>Product API Demo</p>
+//       <p>Product API Demo</p>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default Navbar
+// export default Navbar
