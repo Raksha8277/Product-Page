@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
 
-    <div className="min-h-screen bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 p-4 md:p-8">
+    <div className="min-h-screen bg-gradient-to-r from-blue-50 via-blue-200 to-blue-50 p-4 md:p-8">
 
       <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gray-800">
         Our Products

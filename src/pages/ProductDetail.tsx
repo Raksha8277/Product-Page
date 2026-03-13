@@ -32,7 +32,7 @@ const ProductDetail = () => {
 
   const { id } = useParams()
   const [product, setProduct] = useState<Product | null>(null)
-  // const [qty, setQty] = useState(1)
+  const [qty, setQty] = useState(1)
 
   useEffect(() => {
 
@@ -46,7 +46,7 @@ const ProductDetail = () => {
 
   return (
 
-    <div className="min-h-screen bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 flex justify-center items-center p-6">
+    <div className="min-h-screen bg-gradient-to-r from-white via-blue-300 to-white flex justify-center items-center p-6">
 
       <div className="bg-white shadow-xl rounded-xl p-8 max-w-3xl w-full">
 
@@ -59,7 +59,7 @@ const ProductDetail = () => {
 
         <div className="flex flex-col md:flex-row gap-8 items-center">
 
-          <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+          <div className="bg-gray-100 p-6 rounded-lg shadow-md">
 
             <img
               src={product.image}
